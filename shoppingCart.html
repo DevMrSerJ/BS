@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="http://s1.iconbird.com/ico/1012/EcommerceBusinessIcons/w128h1281350823385shopping128x128.png">
     <link rel="stylesheet" type="text/css" href="style/style.css">
+    <script ENGINE="text/javascript" src="https://code.jquery.com/jquery-1.11.2.js "></script>
+    <script src="scripts/Script.js"></script>
 </head>
 <body>
 <div class="upLine">
@@ -14,7 +16,7 @@
     <div class="header">
         <a href="shoppingCart.html" class="linkShoppingCart">
             <img src="images/shoppingCart.png" class="imageShoppingCart">
-            <span>0 ₽</span>
+            <span id="costShoppingCart">0</span>₽
         </a>
     </div>
 </div>
@@ -25,29 +27,18 @@
             <th>Картинка</th>
             <th>Название</th>
             <th>Автор</th>
+            <th>ISBN</th>
             <th>Цена</th>
             <th>Количество</th>
             <th>Стоимость</th>
         </tr>
-        <tr>
-            <td class="imageCell">
-                <div class="imgProductShoppingCart">
-                    <img src="https://cdn1.ozone.ru/multimedia/1008879739.jpg" class="productImg">
-                </div>
-            </td>
-            <td><span>Богатый папа, бедный папа</span></td>
-            <td><span>Роберт Кийосаки</span></td>
-            <td><span id="priceBook">1500</span>₽</td>
-            <td><span id="countBookShoppingCart">2</span></td>
-            <td><span id="costBooks">3000</span>₽</td>
-            <td>
-                <div class="blockButtonProduct">
-                    <button onclick="deleteBook();">Удалить</button>
-                </div>
-            </td>
-        </tr>
+        <script>
+            loadShoppingCart();
+        </script>
     </table>
+    <div id="placeOrder">
+        <button onclick="placeOrder();">Оформить заказ</button>
+    </div>
 </div>
-<script src="scripts/Script.js"></script>
 </body>
 </html>

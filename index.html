@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="https://faviconka.ru/ico/1/faviconka.ru_1_14247.ico">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <script ENGINE="text/javascript" src="https://code.jquery.com/jquery-1.11.2.js "></script>
+    <script src="scripts/Script.js"></script>
 </head>
 <body>
 <div>
@@ -16,38 +17,15 @@
         <div class="header">
             <a href="shoppingCart.html" class="linkShoppingCart">
                 <img src="images/shoppingCart.png" class="imageShoppingCart">
-                <span>0 ₽</span>
             </a>
         </div>
     </div>
     <hr>
     <div class="catalog">
         <script>
-            $.get('https://localhost:44358/api/product', function(data){
-                var jsonObj = $.parseJSON(data);
-                $(".test").text(jsonObj.length);
-
-                for(let i = 0; i < jsonObj.length; i++) {
-                    $(".catalog").append("<div class=\"product\">\n" +
-                        "            <div class=\"imgProduct\">\n" +
-                        "                <img src=\"https://cdn1.ozone.ru/multimedia/1008879739.jpg\" class=\"productImg\">\n" +
-                        "            </div>\n" +
-                        "            <p><span>Название: " + jsonObj[i].Name + "</span></p>\n"+
-                        "            <p><span>Автор: " + jsonObj[i].Author + "</span></p>\n" +
-                        "            <p><span>Дата издания: " + jsonObj[i].DatePublish + "</span></p>\n" +
-                        "            <p><span>ISBN: " + jsonObj[i].ISBN + "</span></p>\n" +
-                        "            <p><span>Стоимость: " + jsonObj[i].Price + "₽</span></p>\n" +
-                        "            <p>Количество: <span id=\"countBook" + i + "\">" + jsonObj[i].Count + "</span> шт.</p>\n" +
-                        "            <div>\n" +
-                        "                <button class=\"buttonBuy\" onclick=\"buyBook\">КУПИТЬ</button>\n" +
-        "            </div>\n" +
-    "        </div>");
-}
-
-});
-</script>
+            loadCatalog();
+        </script>
+    </div>
 </div>
-</div>
-<script src="scripts/Script.js"></script>
 </body>
 </html>
